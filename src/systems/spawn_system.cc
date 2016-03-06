@@ -9,6 +9,7 @@ SpawnSystem::SpawnSystem() {
 
 void SpawnSystem::configure(ex::EventManager& events) {
   events.subscribe<MouseDownEvent>(*this);
+  events.subscribe<MouseScrollEvent>(*this);
 }
 
 void SpawnSystem::update(ex::EntityManager &entities,
@@ -28,6 +29,13 @@ void SpawnSystem::update(ex::EntityManager &entities,
 }
 
 void SpawnSystem::receive(const MouseDownEvent& ev) {
+  int radius = 8 + rand() % 20;
+  int dx = rand() % 70 - 35;
+  int dy = rand() % 70 - 35;
+  queue_.push(std::make_tuple(ev.x, ev.y, radius, dx, dy));
+}
+
+void SpawnSystem::receive(const MouseScrollEvent& ev) {
   int radius = 8 + rand() % 20;
   int dx = rand() % 70 - 35;
   int dy = rand() % 70 - 35;

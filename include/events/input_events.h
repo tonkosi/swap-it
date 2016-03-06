@@ -25,11 +25,12 @@ struct MouseUpEvent : public ex::Event<MouseUpEvent> {
 
 // Kad scrollas misem
 struct MouseScrollEvent : public ex::Event<MouseScrollEvent> {
-  MouseScrollEvent(int delta)
-      : delta(delta) {
+  MouseScrollEvent(unsigned int x, unsigned int y, int delta)
+      : x(x), y(y), delta(delta) {
   }
   
   int delta;
+  unsigned int x, y;
 };
 
 // Kad god pomaknete mis

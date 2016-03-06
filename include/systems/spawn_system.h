@@ -22,6 +22,7 @@ class SpawnSystem : public ex::System<SpawnSystem>,
   void update(ex::EntityManager &entites, ex::EventManager &events, double dt);
 
   void receive(const MouseDownEvent& ev);
+  void receive(const MouseScrollEvent& ev);
 
  private:
   std::queue<std::tuple<double, double, double, double, double>> queue_;

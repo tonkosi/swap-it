@@ -27,6 +27,9 @@ void App::run() {
       if (event.type == sf::Event::MouseButtonPressed) {
         events.emit<MouseDownEvent>(event.mouseButton.x, event.mouseButton.y);
       }
+      if (event.type == sf::Event::MouseWheelScrolled) {
+	events.emit<MouseScrollEvent>(event.mouseWheelScroll.x, event.mouseWheelScroll.y, event.mouseWheelScroll.delta);
+      }
     }
     
     double dt = clock.restart().asSeconds();
