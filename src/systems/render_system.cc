@@ -12,12 +12,12 @@ RenderSystem::RenderSystem() {
 
 void RenderSystem::update(ex::EntityManager &entities,
                           ex::EventManager &events, double dt) {
+  Texture::bind("BLINK");
+  glEnable(GL_TEXTURE_2D);
   entities.each<Position, MVP>([dt](
       ex::Entity, Position &pos, MVP &mvp) {
-    Texture::bind("BLINK");
     glPushMatrix();
       glTranslatef(pos.x, pos.y, 0);
-      glEnable(GL_TEXTURE_2D);
       glColor3f(mvp.col.r, mvp.col.g, mvp.col.b); 
       glBegin(GL_QUADS);
         glTexCoord2f(0, 0); glVertex2f(-mvp.r, -mvp.r);
