@@ -15,7 +15,6 @@ class MovementSystem : public ex::System<MovementSystem> {
   void update(ex::EntityManager &entites, ex::EventManager &events, double dt);
 
  private:
-  // .. bla bla bla
 };
 
 #endif  // SWAPIT_SYSTEMS_MOVEMENT_SYSTEM_H_

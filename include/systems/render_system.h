@@ -16,7 +16,6 @@ class RenderSystem : public ex::System<RenderSystem> {
   void update(ex::EntityManager &entites, ex::EventManager &events, double dt);
 
  private:
-  // .. bla bla bla
 };
 
 #endif  // SWAPIT_SYSTEMS_RENDER_SYSTEM_H_

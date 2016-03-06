@@ -23,7 +23,7 @@ void SpawnSystem::update(ex::EntityManager &entities,
     ex::Entity ent = entities.create();
     ent.assign<Position>(x, y);
     ent.assign<Velocity>(dx, dy);
-    ent.assign<MVP>(r, Color::GetRandom());
+    ent.assign<MVP>(r, Color::getRandom());
   }
 }
 

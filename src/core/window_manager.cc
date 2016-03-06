@@ -5,11 +5,10 @@
 
 sf::RenderWindow WindowManager::render_window_;
 
-void WindowManager::Create() {
+void WindowManager::create() {
   render_window_.create(sf::VideoMode(WIN_WIDTH, WIN_HEIGHT), "Title");
   render_window_.setFramerateLimit(30);
 
-  // OpenGl gluposti
   glClearColor(0, 0, 0, 0);
   glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
 
@@ -34,23 +33,23 @@ void WindowManager::Create() {
   glClear(GL_COLOR_BUFFER_BIT);
 }
 
-bool WindowManager::IsOpen() {
+bool WindowManager::isOpen() {
   return render_window_.isOpen();
 }
 
-void WindowManager::Close() {
+void WindowManager::close() {
   render_window_.close();
 }
 
-bool WindowManager::PollEvent(sf::Event &event) {
+bool WindowManager::pollEvent(sf::Event &event) {
   return render_window_.pollEvent(event);
 }
 
-void WindowManager::Clear() {
+void WindowManager::clear() {
   glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void WindowManager::Draw(const sf::Drawable& drawable,
+void WindowManager::draw(const sf::Drawable& drawable,
                          const sf::RenderStates& states,
                          sf::Shader *shader) {
   glPushMatrix();
@@ -62,6 +61,6 @@ void WindowManager::Draw(const sf::Drawable& drawable,
   glPopMatrix();
 }
 
-void WindowManager::Display() {
+void WindowManager::display() {
   render_window_.display();
 }

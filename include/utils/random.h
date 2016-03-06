@@ -4,10 +4,10 @@
 #include <cmath>
 #include <cstdlib>
 
-double Rand01();
+double rand01();
 
-double RandomDouble();
+double randomDouble();
 
-double RandomDouble(double lo, double hi);
+double randomDouble(double lo, double hi);
 
 #endif  // SWAPIT_UTILS_RANDOM_H_

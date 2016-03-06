@@ -20,10 +20,10 @@ Color::Color(const sf::Color& color) {
   a = color.a / 255.0;
 }
 
-Color Color::GetRandom() {
-  double h = RandomDouble(0, 360);
-  double s = RandomDouble(0.4, 0.6);
-  double v = RandomDouble(0.75, 1.0);
+Color Color::getRandom() {
+  double h = randomDouble(0, 360);
+  double s = randomDouble(0.4, 0.6);
+  double v = randomDouble(0.75, 1.0);
   return HSV_to_RGB(h, s, v);
 }
 

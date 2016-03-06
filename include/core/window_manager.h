@@ -10,23 +10,23 @@ class WindowManager {
   static constexpr unsigned int WIN_WIDTH  = 960;
   static constexpr unsigned int WIN_HEIGHT = 540;
 
-  static void Create();
+  static void create();
   
-  static bool IsOpen();
+  static bool isOpen();
 
-  static void Loop();
+  static void loop();
 
-  static void Close();
+  static void close();
   
-  static bool PollEvent(sf::Event& event);
+  static bool pollEvent(sf::Event& event);
   
-  static void Clear();
+  static void clear();
 
-  static void Draw(const sf::Drawable& drawable,
+  static void draw(const sf::Drawable& drawable,
                    const sf::RenderStates& states = sf::BlendAlpha,
                    sf::Shader *shader = nullptr);
   
-  static void Display();
+  static void display();
  
  private:
   static sf::RenderWindow render_window_;

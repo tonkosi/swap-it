@@ -11,7 +11,7 @@ struct Color {
   Color(double r, double g, double b, double a);
   Color(const sf::Color& color);
 
-  static Color GetRandom();
+  static Color getRandom();
   static Color HSV_to_RGB(double h, double s, double v);
 };
 

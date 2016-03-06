@@ -5,8 +5,8 @@
 
 class TimeManager {
  public:
-  static sf::Time GetDelta();
-  static void Restart();
+  static sf::Time getDelta();
+  static void restart();
  
  private:
   static sf::Clock clock_;

@@ -16,14 +16,14 @@ void App::init() {
 }
 
 void App::run() {
-  WindowManager::Create();
+  WindowManager::create();
   
   sf::Clock clock;
-  while (WindowManager::IsOpen()) {
+  while (WindowManager::isOpen()) {
     sf::Event event;
-    while (WindowManager::PollEvent(event)) {
+    while (WindowManager::pollEvent(event)) {
       if (event.type == sf::Event::Closed)
-        WindowManager::Close();
+        WindowManager::close();
       if (event.type == sf::Event::MouseButtonPressed) {
         events.emit<MouseDownEvent>(event.mouseButton.x, event.mouseButton.y);
       }
@@ -36,7 +36,7 @@ void App::run() {
     draw(dt);
     update(dt);
     
-    WindowManager::Display();
+    WindowManager::display();
   }
 }
 
