@@ -23,6 +23,15 @@ struct MouseUpEvent : public ex::Event<MouseUpEvent> {
   unsigned int x, y;
 };
 
+// Kad scrollas misem
+struct MouseScrollEvent : public ex::Event<MouseScrollEvent> {
+  MouseScrollEvent(int delta)
+      : delta(delta) {
+  }
+  
+  int delta;
+};
+
 // Kad god pomaknete mis
 struct MouseMoveEvent : public ex::Event<MouseMoveEvent> {
   MouseMoveEvent(unsigned int x, unsigned int y)
